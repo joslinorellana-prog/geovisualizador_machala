@@ -1,0 +1,395 @@
+/* ===========================
+   DASHBOARD - GEOVISUALIZADOR
+   =========================== */
+
+:root{
+    --primary:#1565C0;
+    --primary-dark:#0D47A1;
+    --secondary:#1E88E5;
+    --success:#43A047;
+    --warning:#FB8C00;
+    --danger:#E53935;
+    --bg:#f4f7fb;
+    --card:#ffffff;
+    --text:#263238;
+    --border:#dfe5ec;
+    --shadow:0 6px 18px rgba(0,0,0,.15);
+    --radius:14px;
+}
+
+body{
+    background:var(--bg);
+    font-family:Segoe UI,Roboto,Arial,sans-serif;
+}
+
+/* ===========================
+   PANEL LATERAL
+   =========================== */
+
+#dashboard{
+
+    position:absolute;
+
+    top:10px;
+
+    right:10px;
+
+    width:380px;
+
+    max-height:95vh;
+
+    overflow-y:auto;
+
+    background:var(--card);
+
+    border-radius:var(--radius);
+
+    box-shadow:var(--shadow);
+
+    z-index:9999;
+
+    transition:.35s;
+
+}
+
+/* Scroll */
+
+#dashboard::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+#dashboard::-webkit-scrollbar-thumb{
+
+    background:#b0bec5;
+
+    border-radius:20px;
+
+}
+
+/* ===========================
+   TITULO
+   =========================== */
+
+.dashboard-header{
+
+    background:linear-gradient(90deg,#1565C0,#1E88E5);
+
+    color:white;
+
+    padding:18px;
+
+    border-radius:14px 14px 0 0;
+
+}
+
+.dashboard-header h2{
+
+    margin:0;
+
+    font-size:22px;
+
+    font-weight:700;
+
+}
+
+.dashboard-header p{
+
+    margin-top:6px;
+
+    opacity:.9;
+
+}
+
+/* ===========================
+   TARJETAS
+   =========================== */
+
+.cards{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:12px;
+
+    padding:15px;
+
+}
+
+.card{
+
+    background:white;
+
+    border-radius:12px;
+
+    padding:16px;
+
+    text-align:center;
+
+    box-shadow:0 3px 10px rgba(0,0,0,.08);
+
+}
+
+.card h3{
+
+    margin:0;
+
+    color:#1565C0;
+
+    font-size:14px;
+
+}
+
+.card .number{
+
+    margin-top:8px;
+
+    font-size:27px;
+
+    font-weight:bold;
+
+    color:#263238;
+
+}
+
+/* ===========================
+   SECCIONES
+   =========================== */
+
+.section{
+
+    margin:15px;
+
+    background:white;
+
+    border-radius:12px;
+
+    padding:15px;
+
+    box-shadow:0 3px 10px rgba(0,0,0,.08);
+
+}
+
+.section h3{
+
+    margin-top:0;
+
+    color:#1565C0;
+
+    font-size:18px;
+
+    border-bottom:2px solid #E3F2FD;
+
+    padding-bottom:8px;
+
+}
+
+/* ===========================
+   GRAFICO
+   =========================== */
+
+.chart-container{
+
+    width:100%;
+
+    height:280px;
+
+}
+
+/* ===========================
+   BARRAS
+   =========================== */
+
+.progress{
+
+    background:#ECEFF1;
+
+    border-radius:50px;
+
+    height:22px;
+
+    overflow:hidden;
+
+    margin-top:8px;
+
+    margin-bottom:18px;
+
+}
+
+.progress-bar{
+
+    height:100%;
+
+    border-radius:50px;
+
+    text-align:right;
+
+    padding-right:10px;
+
+    line-height:22px;
+
+    color:white;
+
+    font-weight:bold;
+
+    transition:1s;
+
+}
+
+.educacion{
+
+    background:#43A047;
+
+    width:65.36%;
+
+}
+
+.salud{
+
+    background:#FB8C00;
+
+    width:44.69%;
+
+}
+
+/* ===========================
+   AREAS VERDES
+   =========================== */
+
+.green-box{
+
+    text-align:center;
+
+}
+
+.green-number{
+
+    font-size:46px;
+
+    color:#43A047;
+
+    font-weight:bold;
+
+}
+
+.green-label{
+
+    font-size:18px;
+
+    color:#607D8B;
+
+}
+
+/* ===========================
+   RIESGO
+   =========================== */
+
+.risk-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:12px;
+
+}
+
+.risk{
+
+    background:#FFF3E0;
+
+    border-radius:10px;
+
+    padding:15px;
+
+    text-align:center;
+
+}
+
+.risk h4{
+
+    margin:0;
+
+    color:#E65100;
+
+}
+
+.risk span{
+
+    font-size:24px;
+
+    font-weight:bold;
+
+    color:#263238;
+
+}
+
+/* ===========================
+   BOTON
+   =========================== */
+
+.toggleDashboard{
+
+    position:absolute;
+
+    top:15px;
+
+    right:405px;
+
+    z-index:10000;
+
+    background:#1565C0;
+
+    color:white;
+
+    border:none;
+
+    border-radius:50px;
+
+    padding:12px 18px;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    box-shadow:var(--shadow);
+
+}
+
+.toggleDashboard:hover{
+
+    background:#0D47A1;
+
+}
+
+/* ===========================
+   RESPONSIVE
+   =========================== */
+
+@media(max-width:900px){
+
+#dashboard{
+
+width:100%;
+
+left:0;
+
+right:0;
+
+top:0;
+
+max-height:100vh;
+
+border-radius:0;
+
+}
+
+.toggleDashboard{
+
+right:15px;
+
+}
+
+}

@@ -1,11 +1,12 @@
 /* ======================================================
    DASHBOARD.JS
-   Geovisualizador Machala
+   GEOVISUALIZADOR MACHALA
    ====================================================== */
 
-// =======================
-// DATOS DEL PROYECTO
-// =======================
+
+/* ======================================================
+   DATOS DEL PROYECTO
+   ====================================================== */
 
 const dashboardData = {
 
@@ -17,238 +18,488 @@ const dashboardData = {
 
     manzanas: 179,
 
-    densidad: (45055/213.09).toFixed(1),
+    densidad: (45055 / 213.09).toFixed(1),
 
-usoSuelo:{
 
-    labels:[
-        "Residencial",
-        "Comercial",
-        "Equipamiento",
-        "Áreas Verdes",
-        "Red Vial",
-        "Vacante"
-    ],
+    /* ==================================================
+       USO DEL SUELO
+       ================================================== */
 
-    valores:[
-        71.98,
-        4.72,
-        3.47,
-        2.20,
-        11.49,
-        6.25
-    ],
+    usoSuelo: {
 
-    colores:[
-        "#F4D03F",
-        "#E74C3C",
-        "#3498DB",
-        "#27AE60",
-        "#566573",
-        "#D5D8DC"
-    ]
+        labels: [
+            "Residencial",
+            "Comercial",
+            "Equipamiento",
+            "Áreas Verdes",
+            "Red Vial",
+            "Vacante"
+        ],
 
-},
+        valores: [
+            71.98,
+            4.72,
+            3.47,
+            2.20,
+            11.49,
+            6.24
+        ],
 
-    educacion:{
+        /* PALETA CARTOGRÁFICA */
 
-        radio:"300 m",
-
-        cobertura:65.36,
-
-        manzanas:117
+        colores: [
+            "#F4D03F",  // Residencial
+            "#E74C3C",  // Comercial
+            "#3498DB",  // Equipamiento
+            "#27AE60",  // Áreas verdes
+            "#566573",  // Red vial
+            "#D5D8DC"   // Vacante
+        ]
 
     },
 
-    salud:{
 
-        radio:"600 m",
+    /* ==================================================
+       EDUCACIÓN
+       ================================================== */
 
-        cobertura:44.69,
+    educacion: {
 
-        manzanas:80
+        radio: "300 m",
 
-    },
+        cobertura: 65.36,
 
-    areasVerdes:{
-
-        area:"46 821.93 m²",
-
-        indicador:"1.04",
-
-        deficit:"35.87 ha"
+        manzanas: 117
 
     },
 
-    riesgo:{
 
-        manzanas:20,
+    /* ==================================================
+       SALUD
+       ================================================== */
 
-        habitantes:1852,
+    salud: {
 
-        area:"154 293.19 m²"
+        radio: "600 m",
+
+        cobertura: 44.69,
+
+        manzanas: 80
+
+    },
+
+
+    /* ==================================================
+       ÁREAS VERDES
+       ================================================== */
+
+    areasVerdes: {
+
+        area: "46 821.93 m²",
+
+        indicador: "1.04",
+
+        deficit: "35.87 ha"
+
+    },
+
+
+    /* ==================================================
+       RIESGO DE INUNDACIÓN
+       ================================================== */
+
+    riesgo: {
+
+        manzanas: 20,
+
+        habitantes: 1852,
+
+        area: "154 293.19 m²"
 
     }
 
 };
 
-//==================================
-// LLENAR TARJETAS
-//==================================
 
-function cargarIndicadores(){
+/* ======================================================
+   CARGAR INDICADORES
+   ====================================================== */
 
-document.getElementById("txtArea").innerHTML=dashboardData.area;
+function cargarIndicadores() {
 
-document.getElementById("txtPoblacion").innerHTML=
-dashboardData.poblacion.toLocaleString();
+    const txtArea = document.getElementById("txtArea");
 
-document.getElementById("txtManzanas").innerHTML=
-dashboardData.manzanas;
+    if (txtArea) {
+        txtArea.innerHTML = dashboardData.area;
+    }
 
-document.getElementById("txtDensidad").innerHTML=
-dashboardData.densidad+" hab/ha";
 
-document.getElementById("eduRadio").innerHTML=
-dashboardData.educacion.radio;
+    const txtPoblacion = document.getElementById("txtPoblacion");
 
-document.getElementById("eduCobertura").innerHTML=
-dashboardData.educacion.cobertura+" %";
+    if (txtPoblacion) {
+        txtPoblacion.innerHTML =
+            dashboardData.poblacion.toLocaleString("es-ES");
+    }
 
-document.getElementById("eduManzanas").innerHTML=
-dashboardData.educacion.manzanas;
 
-document.getElementById("salRadio").innerHTML=
-dashboardData.salud.radio;
+    const txtManzanas = document.getElementById("txtManzanas");
 
-document.getElementById("salCobertura").innerHTML=
-dashboardData.salud.cobertura+" %";
+    if (txtManzanas) {
+        txtManzanas.innerHTML =
+            dashboardData.manzanas;
+    }
 
-document.getElementById("salManzanas").innerHTML=
-dashboardData.salud.manzanas;
 
-document.getElementById("greenArea").innerHTML=
-dashboardData.areasVerdes.area;
+    const txtDensidad = document.getElementById("txtDensidad");
 
-document.getElementById("greenValue").innerHTML=
-dashboardData.areasVerdes.indicador;
+    if (txtDensidad) {
+        txtDensidad.innerHTML =
+            dashboardData.densidad + " hab/ha";
+    }
 
-document.getElementById("greenDeficit").innerHTML=
-dashboardData.areasVerdes.deficit;
 
-document.getElementById("riskM").innerHTML=
-dashboardData.riesgo.manzanas;
+    /* EDUCACIÓN */
 
-document.getElementById("riskH").innerHTML=
-dashboardData.riesgo.habitantes;
+    const eduRadio = document.getElementById("eduRadio");
 
-document.getElementById("riskA").innerHTML=
-dashboardData.riesgo.area;
+    if (eduRadio) {
+        eduRadio.innerHTML =
+            dashboardData.educacion.radio;
+    }
+
+
+    const eduCobertura = document.getElementById("eduCobertura");
+
+    if (eduCobertura) {
+        eduCobertura.innerHTML =
+            dashboardData.educacion.cobertura + " %";
+    }
+
+
+    const eduManzanas = document.getElementById("eduManzanas");
+
+    if (eduManzanas) {
+        eduManzanas.innerHTML =
+            dashboardData.educacion.manzanas;
+    }
+
+
+    /* SALUD */
+
+    const salRadio = document.getElementById("salRadio");
+
+    if (salRadio) {
+        salRadio.innerHTML =
+            dashboardData.salud.radio;
+    }
+
+
+    const salCobertura = document.getElementById("salCobertura");
+
+    if (salCobertura) {
+        salCobertura.innerHTML =
+            dashboardData.salud.cobertura + " %";
+    }
+
+
+    const salManzanas = document.getElementById("salManzanas");
+
+    if (salManzanas) {
+        salManzanas.innerHTML =
+            dashboardData.salud.manzanas;
+    }
+
+
+    /* ÁREAS VERDES */
+
+    const greenArea = document.getElementById("greenArea");
+
+    if (greenArea) {
+        greenArea.innerHTML =
+            dashboardData.areasVerdes.area;
+    }
+
+
+    const greenValue = document.getElementById("greenValue");
+
+    if (greenValue) {
+        greenValue.innerHTML =
+            dashboardData.areasVerdes.indicador;
+    }
+
+
+    const greenDeficit = document.getElementById("greenDeficit");
+
+    if (greenDeficit) {
+        greenDeficit.innerHTML =
+            dashboardData.areasVerdes.deficit;
+    }
+
+
+    /* RIESGO */
+
+    const riskM = document.getElementById("riskM");
+
+    if (riskM) {
+        riskM.innerHTML =
+            dashboardData.riesgo.manzanas;
+    }
+
+
+    const riskH = document.getElementById("riskH");
+
+    if (riskH) {
+        riskH.innerHTML =
+            dashboardData.riesgo.habitantes.toLocaleString("es-ES");
+    }
+
+
+    const riskA = document.getElementById("riskA");
+
+    if (riskA) {
+        riskA.innerHTML =
+            dashboardData.riesgo.area;
+    }
 
 }
 
-//==================================
-// GRAFICO
-//==================================
+
+/* ======================================================
+   GRÁFICO DE USO DEL SUELO
+   ====================================================== */
 
 let grafico;
 
-function crearGrafico(){
 
-const ctx=document.getElementById("usoSueloChart");
+function crearGrafico() {
 
-grafico=new Chart(ctx,{
+    const canvas =
+        document.getElementById("usoSueloChart");
 
-type:"doughnut",
 
-data:{
+    /* Si no existe el canvas, no hacemos nada */
 
-labels:dashboardData.usoSuelo.labels,
+    if (!canvas) {
+        return;
+    }
 
-datasets:[{
 
-data:dashboardData.usoSuelo.valores,
+    /* Si Chart.js no está cargado */
 
-backgroundColor:dashboardData.usoSuelo.colores,
+    if (typeof Chart === "undefined") {
 
-borderWidth:1
+        console.error(
+            "Chart.js no está cargado."
+        );
 
-}]
+        return;
 
-},
+    }
 
-options:{
 
-responsive:true,
+    grafico = new Chart(canvas, {
 
-plugins:{
+        type: "doughnut",
 
-legend:{
+        data: {
 
-position:"bottom"
+            labels:
+                dashboardData.usoSuelo.labels,
+
+            datasets: [{
+
+                data:
+                    dashboardData.usoSuelo.valores,
+
+                backgroundColor:
+                    dashboardData.usoSuelo.colores,
+
+                borderColor: "#FFFFFF",
+
+                borderWidth: 3,
+
+                hoverOffset: 10
+
+            }]
+
+        },
+
+
+        options: {
+
+            responsive: true,
+
+            maintainAspectRatio: false,
+
+            cutout: "58%",
+
+
+            animation: {
+
+                animateRotate: true,
+
+                animateScale: true,
+
+                duration: 1200
+
+            },
+
+
+            plugins: {
+
+                legend: {
+
+                    position: "bottom",
+
+                    labels: {
+
+                        padding: 12,
+
+                        usePointStyle: true,
+
+                        pointStyle: "circle",
+
+                        font: {
+
+                            size: 12
+
+                        }
+
+                    }
+
+                },
+
+
+                tooltip: {
+
+                    callbacks: {
+
+                        label: function(context) {
+
+                            return (
+                                " " +
+                                context.label +
+                                ": " +
+                                context.raw +
+                                "%"
+                            );
+
+                        }
+
+                    }
+
+                }
+
+            }
+
+        }
+
+    });
 
 }
 
-},
 
-cutout:"60%"
+/* ======================================================
+   BARRAS DE COBERTURA
+   ====================================================== */
 
-}
+function animarBarras() {
 
-});
+    const barraEducacion =
+        document.querySelector(".educacion");
 
-}
 
-//==================================
-// ANIMAR BARRAS
-//==================================
+    if (barraEducacion) {
 
-function animarBarras(){
+        barraEducacion.style.width =
+            dashboardData.educacion.cobertura + "%";
 
-document.querySelector(".educacion").style.width=
-dashboardData.educacion.cobertura+"%";
+        barraEducacion.innerHTML =
+            dashboardData.educacion.cobertura + "%";
 
-document.querySelector(".educacion").innerHTML=
-dashboardData.educacion.cobertura+"%";
+    }
 
-document.querySelector(".salud").style.width=
-dashboardData.salud.cobertura+"%";
 
-document.querySelector(".salud").innerHTML=
-dashboardData.salud.cobertura+"%";
+    const barraSalud =
+        document.querySelector(".salud");
 
-}
 
-//==================================
-// BOTON
-//==================================
+    if (barraSalud) {
 
-function toggleDashboard(){
+        barraSalud.style.width =
+            dashboardData.salud.cobertura + "%";
 
-const panel=document.getElementById("dashboard");
+        barraSalud.innerHTML =
+            dashboardData.salud.cobertura + "%";
 
-if(panel.style.right==="-420px"){
-
-panel.style.right="10px";
-
-}else{
-
-panel.style.right="-420px";
+    }
 
 }
 
+
+/* ======================================================
+   ABRIR / CERRAR DASHBOARD
+   ====================================================== */
+
+function toggleDashboard() {
+
+    const panel =
+        document.getElementById("dashboard");
+
+
+    if (!panel) {
+        return;
+    }
+
+
+    if (
+        panel.style.right === "-420px" ||
+        panel.style.right === ""
+    ) {
+
+        panel.style.right = "10px";
+
+    }
+
+    else {
+
+        panel.style.right = "-420px";
+
+    }
+
 }
 
-//==================================
-// INICIO
-//==================================
 
-window.onload=function(){
+/* ======================================================
+   INICIAR DASHBOARD
+   ====================================================== */
 
-cargarIndicadores();
+function iniciarDashboard() {
 
-crearGrafico();
+    cargarIndicadores();
 
-animarBarras();
+    crearGrafico();
 
-};
+    animarBarras();
+
+}
+
+
+/* ======================================================
+   ESPERAR A QUE CARGUE LA PÁGINA
+   ====================================================== */
+
+if (document.readyState === "loading") {
+
+    document.addEventListener(
+        "DOMContentLoaded",
+        iniciarDashboard
+    );
+
+}
+
+else {
+
+    iniciarDashboard();
+
+}

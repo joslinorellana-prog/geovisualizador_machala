@@ -40,12 +40,12 @@ const dashboardData = {
         ],
 
 colores:[
-    "#2E7D32",
-    "#F9A825",
-    "#1E88E5",
-    "#66BB6A",
-    "#757575",
-    "#BDBDBD"
+    "#F4D03F",  // Residencial
+    "#E74C3C",  // Comercial
+    "#3498DB",  // Equipamiento
+    "#27AE60",  // Áreas verdes
+    "#566573",  // Red vial
+    "#D5D8DC"   // Vacante
 ]
 
     },

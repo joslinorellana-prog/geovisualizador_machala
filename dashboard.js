@@ -19,36 +19,36 @@ const dashboardData = {
 
     densidad: (45055/213.09).toFixed(1),
 
-    usoSuelo:{
+usoSuelo:{
 
-        labels:[
-            "Residencial",
-            "Comercial",
-            "Equipamiento",
-            "Áreas Verdes",
-            "Red Vial",
-            "Vacante"
-        ],
+    labels:[
+        "Residencial",
+        "Comercial",
+        "Equipamiento",
+        "Áreas Verdes",
+        "Red Vial",
+        "Vacante"
+    ],
 
-        valores:[
-            71.98,
-            4.72,
-            3.47,
-            2.20,
-            11.49,
-            6.25
-        ],
+    valores:[
+        71.98,
+        4.72,
+        3.47,
+        2.20,
+        11.49,
+        6.25
+    ],
 
-colores:[
-    "#F4D03F",  // Residencial
-    "#E74C3C",  // Comercial
-    "#3498DB",  // Equipamiento
-    "#27AE60",  // Áreas verdes
-    "#566573",  // Red vial
-    "#D5D8DC"   // Vacante
-]
+    colores:[
+        "#F4D03F",
+        "#E74C3C",
+        "#3498DB",
+        "#27AE60",
+        "#566573",
+        "#D5D8DC"
+    ]
 
-    },
+},
 
     educacion:{
 

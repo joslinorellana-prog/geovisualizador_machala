@@ -59,83 +59,49 @@ const dashboardData = {
     },
 
 
-/* ==================================================
-   ACCESIBILIDAD A EQUIPAMIENTOS
-   ================================================== */
-
-accesibilidad: {
+    /* ==================================================
+       EDUCACIÓN
+       ================================================== */
 
     educacion: {
+
         radio: "300 m",
-        manzanasCubiertas: 117,
-        totalManzanas: 179,
-        cobertura: 65.36
+
+        cobertura: 65.36,
+
+        manzanas: 117
+
     },
 
+
+    /* ==================================================
+       SALUD
+       ================================================== */
+
     salud: {
+
         radio: "600 m",
-        manzanasCubiertas: 80,
-        totalManzanas: 179,
-        cobertura: 44.69
-    }
 
-},
+        cobertura: 44.69,
 
+        manzanas: 80
 
- /* ==================================================
-   ÁREAS VERDES
-   ================================================== */
-
-const greenArea = document.getElementById("greenArea");
-
-if (greenArea) {
-    greenArea.innerHTML =
-        dashboardData.areasVerdes.area;
-}
+    },
 
 
-const greenValue = document.getElementById("greenValue");
+    /* ==================================================
+       ÁREAS VERDES
+       ================================================== */
 
-if (greenValue) {
-    greenValue.innerHTML =
-        dashboardData.areasVerdes.indicador;
-}
+    areasVerdes: {
 
+        area: "46 821.93 m²",
 
-const greenRecommended =
-    document.getElementById("greenRecommended");
+        indicador: "1.04",
 
-if (greenRecommended) {
-    greenRecommended.innerHTML =
-        dashboardData.areasVerdes.recomendado;
-}
+        deficit: "35.87 ha"
 
-
-const greenCoverage =
-    document.getElementById("greenCoverage");
-
-if (greenCoverage) {
-    greenCoverage.innerHTML =
-        dashboardData.areasVerdes.cobertura;
-}
-
-
-const greenDeficit =
-    document.getElementById("greenDeficit");
-
-if (greenDeficit) {
-    greenDeficit.innerHTML =
-        dashboardData.areasVerdes.deficit;
-}
-
-
-const greenDeficitPercent =
-    document.getElementById("greenDeficitPercent");
-
-if (greenDeficitPercent) {
-    greenDeficitPercent.innerHTML =
-        dashboardData.areasVerdes.deficitPorcentaje;
-},
+    },
 
 
     /* ==================================================

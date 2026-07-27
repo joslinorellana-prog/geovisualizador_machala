@@ -39,14 +39,14 @@ const dashboardData = {
             6.25
         ],
 
-        colores:[
-            "#2E7D32",
-            "#F9A825",
-            "#1E88E5",
-            "#66BB6A",
-            "#757575",
-            "#BDBDBD"
-        ]
+colores:[
+    "#2E7D32",
+    "#F9A825",
+    "#1E88E5",
+    "#66BB6A",
+    "#757575",
+    "#BDBDBD"
+]
 
     },
 

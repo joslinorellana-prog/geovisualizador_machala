@@ -89,24 +89,59 @@ const dashboardData = {
     },
 
 
-    /* ==================================================
-       ÁREAS VERDES
-       ================================================== */
+ /* ==================================================
+   ÁREAS VERDES
+   ================================================== */
 
-areasVerdes: {
+const greenArea = document.getElementById("greenArea");
 
-    area: "46 821.93 m²",
+if (greenArea) {
+    greenArea.innerHTML =
+        dashboardData.areasVerdes.area;
+}
 
-    indicador: "1.04",
 
-    recomendado: "9.00",
+const greenValue = document.getElementById("greenValue");
 
-    cobertura: "11.55%",
+if (greenValue) {
+    greenValue.innerHTML =
+        dashboardData.areasVerdes.indicador;
+}
 
-    deficit: "35.87 ha",
 
-    deficitPorcentaje: "88.45%"
+const greenRecommended =
+    document.getElementById("greenRecommended");
 
+if (greenRecommended) {
+    greenRecommended.innerHTML =
+        dashboardData.areasVerdes.recomendado;
+}
+
+
+const greenCoverage =
+    document.getElementById("greenCoverage");
+
+if (greenCoverage) {
+    greenCoverage.innerHTML =
+        dashboardData.areasVerdes.cobertura;
+}
+
+
+const greenDeficit =
+    document.getElementById("greenDeficit");
+
+if (greenDeficit) {
+    greenDeficit.innerHTML =
+        dashboardData.areasVerdes.deficit;
+}
+
+
+const greenDeficitPercent =
+    document.getElementById("greenDeficitPercent");
+
+if (greenDeficitPercent) {
+    greenDeficitPercent.innerHTML =
+        dashboardData.areasVerdes.deficitPorcentaje;
 },
 
 

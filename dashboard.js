@@ -93,15 +93,21 @@ const dashboardData = {
        ÁREAS VERDES
        ================================================== */
 
-    areasVerdes: {
+areasVerdes: {
 
-        area: "46 821.93 m²",
+    area: "46 821.93 m²",
 
-        indicador: "1.04",
+    indicador: "1.04",
 
-        deficit: "35.87 ha"
+    recomendado: "9.00",
 
-    },
+    cobertura: "11.55%",
+
+    deficit: "35.87 ha",
+
+    deficitPorcentaje: "88.45%"
+
+},
 
 
     /* ==================================================
